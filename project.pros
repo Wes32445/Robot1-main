@@ -1,7 +1,7 @@
 {
   "py/object": "pros.conductor.project.Project",
   "py/state": {
-    "project_name": " Color Sensor Test Robot1",
+    "project_name": " Auton Color Sensor Robot1",
     "target": "v5",
     "templates": {
       "EZ-Template": {
