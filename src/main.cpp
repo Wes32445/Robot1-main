@@ -1,6 +1,6 @@
 #include "main.h"
 #include "EZ-Template/intake.hpp"
-#include "Color.cpp"
+#include "color.hpp"
 /////
 // For installation, upgrading, documentations, and tutorials, check out our website!
 // https://ez-robotics.github.io/EZ-Template/
@@ -97,6 +97,9 @@ void initialize() {
 
   // Turn on the built-in white LED to help detect colors
   optical.set_led_pwm(100); // 0–100, 100 = full brightness
+
+  // Start persistent color-detection task
+  pros::Task colorTask(colorDetectionTask, nullptr, "color_task");
 }
 
 

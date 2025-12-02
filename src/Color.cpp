@@ -1,8 +1,8 @@
 #include "main.h" 
 #include "subsystems.hpp"
 #include "pros/optical.h"
+#include "color.hpp"
 
-// Removed missing header include "color.hpp" — add a proper header file or correct include path if you need shared declarations.
 
 // Manual toggle control 
 bool colorDetectionEnabled = true; 

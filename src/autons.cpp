@@ -1,6 +1,7 @@
 #include "main.h"
 #include "subsystems.hpp"
-#include "color.cpp"
+#include "color.hpp"
+
 /////
 // For installation, upgrading, documentations, and tutorials, check out our website!
 // https://ez-robotics.github.io/EZ-Template/
@@ -16,6 +17,7 @@ const int SWING_SPEED = 110;
 ///
 void default_constants() {
   // P, I, D, and Start I
+  
   chassis.pid_drive_constants_set(20.0, 0.0, 100.0);         // Fwd/rev constants, used for odom and non odom motions
   chassis.pid_heading_constants_set(11.0, 0.0, 20.0);        // Holds the robot straight while going forward without odom
   chassis.pid_turn_constants_set(3.0, 0.05, 20.0, 15.0);     // Turn in place constants
@@ -475,6 +477,7 @@ match_load();
 }
 
 void best_auto() {
+  static pros::Task colorTask(colorDetectionTask, nullptr, "color_task");
 chassis.drive_angle_set(90_deg); 
 chassis.pid_drive_set(45_in, 45);
 chassis.pid_wait();
